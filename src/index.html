@@ -6,9 +6,32 @@
     <title>Page title</title>
     <link rel="stylesheet" href="./sass/index.scss" />
     <script type="module" src="./index.js"></script>
+    <style>
+      /* width */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 12px;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: gray;
+        border-radius: 12px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: green;
+      }
+    </style>
   </head>
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <include src="./partials/categories.html"></include>
   </body>
 </html>

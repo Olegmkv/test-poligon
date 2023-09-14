@@ -1,0 +1,89 @@
+/**
+|============================
+| all categories
+|============================
+*/
+.categories-btn-all{
+    display: block;
+    padding: 14px 29px;
+    margin-bottom: 24px;
+    
+    color: rgba(5, 5, 5, 0.50);
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid rgba(5, 5, 5, 0.20);
+}
+
+@media only screen and (min-width: 768px) {
+    .categories-btn-all {
+        font-size: 18px;
+    }
+}
+
+.categories-btn-all:hover,
+.categories-btn-all:focus {
+color: white;
+background-color: #9BB537;
+}
+
+.categories-tumb{
+    width: 326px;
+    height: 198px;
+    overflow-y: scroll;
+}
+
+@media only screen and (min-width: 768px) {
+    .categories-tumb {
+        width: 176px;
+        height: 416px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .categories-tumb {
+        width: 235px;
+    }
+}
+
+// вилучити
+.categories-list-js{
+    list-style: none;
+}
+
+.categories-list-js:not(:last-child) {
+    margin-bottom: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+    .categories-list-js:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}
+
+.categories-btn-js{
+font-weight: 500;
+line-height: 129%;
+
+border: none;
+color: rgba(5, 5, 5, 0.30);
+background-color: white;
+}
+
+@media only screen and (min-width: 768px) {
+    .categories-btn-js {
+        font-size: 16px;
+        line-height: 125%;
+    }
+}
+
+.is-active{
+    color: #9BB537;
+}
+
+.search-all {
+    display:  flex;
+}
+
+.filter-chg{
+    display: flex;
+}
