@@ -35,6 +35,15 @@ const searchRecipesFilter = async (category,page,limit,time,area,ingredient) => 
         const response = await axios.get(`${URL}${resource.recipes}?${params}`);
         return response;
 };
+
+// Перелік рецептів з фільтрацією по категорії, інгредієнту, ключовому слову, часу та районах з урахування кількості рецептів у запиті та порядкового номеру сторінки
+const searchRecipesFlexFilter = async (param) => {
+        // Праметри API запиту
+   
+        const response = await axios.get(`${URL}${resource.recipes}?${param}`);
+        return response;
+};
+
 // Популярні рецепти
 const searchRecipesPopular = async () => {
     const response = await axios.get(`${URL}${resource.popular}`);
@@ -91,4 +100,4 @@ const searchAddOrders  = async () => {
     const response = await axios.get(`${URL}${resource.orders}`, params);
     return response;
 };
-export{searchEvents,searchCategories,searchRecipesFilter,searchRecipesPopular,searchRecipesId,searchRecipesIdRating,searchIngredients,searchAreas,searchAddOrders};
+export{searchEvents,searchCategories,searchRecipesFilter,searchRecipesPopular,searchRecipesId,searchRecipesIdRating,searchIngredients,searchAreas,searchAddOrders,searchRecipesFlexFilter};

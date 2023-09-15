@@ -1,5 +1,6 @@
 import { RecepiesAPI } from "./js/recepies"
-import * as APIModule from "./js/apiDenis.js"
+import { searchEvents, searchCategories, searchRecipesFilter, searchRecipesPopular, searchRecipesId, searchRecipesIdRating, searchIngredients, searchAreas, searchAddOrders, searchRecipesFlexFilter } from './js/apiDenis.js'
+// import * as APIModule from "./js/apiDenis.js"
 
 
 const api = new RecepiesAPI();
@@ -20,25 +21,40 @@ const refs = {
     recepies: document.querySelector(".recepies-js"),
 };
 
-// формування переліку категорій
-api.getAllCategories().then((categories) => {
-    const markup = categories.map(({ id, name }) => {
-        return `<li class="categories-list-js"><button type="button" data-set="${name}" class="categories-btn-js">${name}</button></li>`
-    }).join("");
-    refs.categories.insertAdjacentHTML('beforeend', markup);
-}).catch(() => { });
-
-
-// формування переліку категорій черз Дениса API
-// window.addEventListener('load', APIModule.searchCategories());
-
-// APIModule.searchCategories().then((categories) => {
+// формування переліку категорій мій фпи
+// api.getAllCategories().then((categories) => {
 //     const markup = categories.map(({ id, name }) => {
 //         return `<li class="categories-list-js"><button type="button" data-set="${name}" class="categories-btn-js">${name}</button></li>`
 //     }).join("");
 //     refs.categories.insertAdjacentHTML('beforeend', markup);
 // }).catch(() => { });
 
+
+// приклад 
+// changeParams('area', 'Irish');
+// changeParams('category', 'Beef');
+
+// searchRecipesFlexFilter(params).then((recepies) => {
+//      const { data } = recepies
+//     console.log("Denisa zapyt",data);
+// }).catch(() => {console.log("error!")});
+
+
+
+// формування переліку категорій черз Дениса API
+
+searchCategories().then(( categories ) => {
+    refs.categories.insertAdjacentHTML('beforeend', makeMarkupCategories(categories));
+}).catch(() => { });
+
+
+function makeMarkupCategories(obj) {
+    const { data } = obj;
+    const markup = data.map(({ name }) => {
+        return `<li class="categories-list-js"><button type="button" data-set="${name}" class="categories-btn-js">${name}</button></li>`
+    }).join("");
+    return markup;
+};
 
 // формування переліку області походження рецепту
 api.getAreas().then((areas) => {
