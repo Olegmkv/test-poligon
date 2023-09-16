@@ -38,8 +38,7 @@ const searchRecipesFilter = async (category,page,limit,time,area,ingredient) => 
 
 // Перелік рецептів з фільтрацією по категорії, інгредієнту, ключовому слову, часу та районах з урахування кількості рецептів у запиті та порядкового номеру сторінки
 const searchRecipesFlexFilter = async (param) => {
-        // Праметри API запиту
-   
+    // console.log("d vnutin",param);
         const response = await axios.get(`${URL}${resource.recipes}?${param}`);
         return response;
 };

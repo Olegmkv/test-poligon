@@ -3,13 +3,12 @@
 | all categories
 |============================
 */
-.categories-btn-all{
-    display: block;
+.categories-btn-all {
     padding: 14px 29px;
     margin-bottom: 24px;
-    
-    color: rgba(5, 5, 5, 0.50);
-    background-color: white;
+
+    color: var(--black-second-color);
+    background-color: var(--whiit-first-color);
     border-radius: 15px;
     border: 1px solid rgba(5, 5, 5, 0.20);
 }
@@ -22,11 +21,14 @@
 
 .categories-btn-all:hover,
 .categories-btn-all:focus {
-color: white;
-background-color: #9BB537;
+    color: var(--white-second-color);
+    background-color: var(--breen-color);
+
 }
 
 .categories-tumb{
+    margin-bottom: 40px;
+    
     width: 326px;
     height: 198px;
     overflow-y: scroll;
@@ -34,6 +36,7 @@ background-color: #9BB537;
 
 @media only screen and (min-width: 768px) {
     .categories-tumb {
+        margin-bottom: 64px;
         width: 176px;
         height: 416px;
     }
@@ -43,11 +46,6 @@ background-color: #9BB537;
     .categories-tumb {
         width: 235px;
     }
-}
-
-// вилучити
-.categories-list-js{
-    list-style: none;
 }
 
 .categories-list-js:not(:last-child) {
@@ -62,22 +60,25 @@ background-color: #9BB537;
 
 .categories-btn-js{
 font-weight: 500;
-line-height: 129%;
+line-height: 1.29;
 
-border: none;
-color: rgba(5, 5, 5, 0.30);
-background-color: white;
+color: var(--black-second-color);
+background-color: var(--whiit-first-color);
 }
 
 @media only screen and (min-width: 768px) {
     .categories-btn-js {
         font-size: 16px;
-        line-height: 125%;
+        line-height: 1.25;
     }
 }
 
 .is-active{
-    color: #9BB537;
+    color: var(--breen-color);
+}
+
+.is-hidden {
+    display: none;
 }
 
 /**
@@ -86,14 +87,109 @@ background-color: white;
   |============================
 */
 
-.popular-head{
+.popular-recipes-head{
+    margin-bottom: 20px;
+
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: #050505;
+}
+
+@media only screen and (min-width: 768px) {
+    .popular-recipes-head {
+        margin-bottom: 32px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .popular-recipes-head {
+        font-size: 24px;
+        line-height: 1.17;  
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .popular-item-js:first-child {
+        margin-bottom: 24px;
+    }
+    .popular-item-js:nth-child(n + 3){
+    display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    .popular-item-js:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .popular-item-js:not(:last-child) {
+        margin-bottom: 32px;
+    }
+}
+
+.popular-card-js{
+    display: flex;
+}
+
+.popular-tumb-js{
+    margin-right: 16px;
+   
+    width: 64px;
+    height: 64px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    .popular-tumb-js {
+        margin-right: 8px;
+    }
+}
+
+.popular-recipes-info-js {
+    width: 252px;
+    height: 67px;
+}
+
+@media only screen and (min-width: 768px) {
+    .popular-recipes-info-js {
+    width: 120px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .popular-recipes-info-js {
+        width: 155px;
+    }
+}
+
+.popular-recipes-name-js{
+    margin-bottom: 8px;
+
+    font-weight: 600;
+    line-height: 1.29;
     text-transform: uppercase;
 }
 
+.popular-recipes-text-js{
+    font-size: 12px;
+    line-height: 1.33;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(5, 5, 5, 0.80);
 
+}
 
-
-
+@media only screen and (min-width: 768px) {
+    .popular-recipes-text-js {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+}
 
 
 .search-all {
@@ -102,4 +198,9 @@ background-color: white;
 
 .filter-chg{
     display: flex;
+}
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
 }
